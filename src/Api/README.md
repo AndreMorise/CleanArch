@@ -2,6 +2,10 @@
 
 The API layer is the entry point to the application, providing HTTP endpoints for clients to interact with the system. This template provides a basic structure for your API layer.
 
+## Prerequisites
+
+- **.NET 8.0**: This project requires [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) or higher. You can install it directly from the link or via Visual Studio 2022 installer.
+
 ## Purpose
 
 The API layer:
