@@ -20,6 +20,7 @@ This project serves as a starting point for building applications with Clean Arc
 - Sample Hello World implementation spanning all layers
 - Integration between .NET backend and React frontend
 - Modern tooling for both backend and frontend development
+- Unit testing setup with Vitest for the client application
 
 ## Clean Architecture Benefits
 
@@ -28,6 +29,11 @@ This project serves as a starting point for building applications with Clean Arc
 - **Independent of UI**: The UI can change without changing the rest of the system
 - **Independent of Database**: Business rules are not bound to a specific database
 - **Independent of any external agency**: Business rules don't know anything about outside world interfaces
+
+## Prerequisites
+
+- **.NET 8.0**: This project requires [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) or higher. You can install it directly from the link or via Visual Studio 2022 installer.
+- **PNPM**: This project uses [PNPM](https://pnpm.io/installation) as the package manager for the frontend instead of NPM. Follow the installation instructions from the link to set it up on your system.
 
 ## Getting Started
 

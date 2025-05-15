@@ -2,6 +2,10 @@
 
 This project provides a modern React application template with TypeScript and Vite for fast development and optimal performance, designed to work with the CleanArch backend.
 
+## Prerequisites
+
+- **[PNPM](https://pnpm.io/installation)**: This project requires PNPM as the package manager instead of NPM. Follow the installation instructions to set it up on your system.
+
 ## Template Status
 
 This template includes a basic structure for the React client application with sample implementations that demonstrate integration with the backend API.
@@ -42,10 +46,11 @@ Client/
 
 ## Features
 
-- React 18 with TypeScript
-- Vite for fast development and builds
-- Biome for linting and formatting
-- pnpm workspace structure for monorepo support
+- [React 18](https://react.dev/) with TypeScript
+- [Vite](https://vite.dev/) for fast development and builds
+- [Biome](https://biomejs.dev/) for linting and formatting
+- [Vitest](https://vitest.dev/) for unit testing
+- [pnpm workspace](https://pnpm.io/workspaces) structure for monorepo support
 - API integration with backend services
 - Shared packages for code reuse
 
@@ -62,16 +67,16 @@ This template uses pnpm workspaces to manage a monorepo structure:
 These packages are recommended for enhancing your application (included in sample implementations):
 
 ### Data Fetching and Caching
-- **@tanstack/react-query**: For efficient data fetching and caching
+- **[@tanstack/react-query](https://tanstack.com/query/latest)**: For efficient data fetching and caching
 
 ### Forms
-- **@tanstack/react-form**: For type-safe form state management
+- **[@tanstack/react-form](https://tanstack.com/form/latest)**: For type-safe form state management
 
 ### State Management
-- **@tanstack/react-store**: For global state management
+- **[@tanstack/react-store](https://tanstack.com/store/latest)**: For global state management
 
 ### Routing
-- **@tanstack/react-router**: For type-safe client-side routing (not implemented in samples)
+- **[@tanstack/react-router](https://tanstack.com/router/latest)**: For type-safe client-side routing (not implemented in samples)
 
 ## Sample Implementations
 
@@ -79,17 +84,17 @@ These packages are recommended for enhancing your application (included in sampl
 
 The template includes a working HelloWorld example that demonstrates:
 
-1. **State Management** with TanStack Store:
+1. **State Management** with [TanStack Store](https://tanstack.com/store/latest):
    - Global state for the HelloWorld feature
    - Type-safe state access and updates
    - Separation of state and actions
 
-2. **API Integration** with TanStack Query:
+2. **API Integration** with [TanStack Query](https://tanstack.com/query/latest):
    - Custom hooks for API requests
    - Loading, error, and success states
    - Data caching and refetching
 
-3. **Form Handling** with TanStack Form:
+3. **Form Handling** with [TanStack Form](https://tanstack.com/form/latest):
    - Type-safe form state
    - Validation logic
    - Form submission handling
@@ -110,11 +115,16 @@ From the root directory:
 - `pnpm build:sample` - Build the Sample Package (`pnpm --filter=sample build`)
 - `pnpm format` - Format code with Biome
 - `pnpm lint` - Lint code with Biome
+- `pnpm test` - Run tests for all packages
+- `pnpm test:website` - Run tests for website (`pnpm --filter=website test`)
+- `pnpm test:sample` - Run tests for sample package (`pnpm --filter=sample test`)
 
 From the website directory:
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
 - `pnpm preview` - Preview production build
+- `pnpm test` - Run tests once
+- `pnpm test:watch` - Run tests in watch mode
 
 ## Development
 
@@ -137,7 +147,7 @@ VITE_API_URL=/api
 
 The client application communicates with the backend API through RESTful endpoints. The sample implementations demonstrate:
 
-1. Making type-safe API requests using TanStack Query
+1. Making type-safe API requests using [TanStack Query](https://tanstack.com/query/latest)
 2. Handling loading, error, and success states
-3. Managing global state with TanStack Store
-4. Processing form data with TanStack Form
+3. Managing global state with [TanStack Store](https://tanstack.com/store/latest)
+4. Processing form data with [TanStack Form](https://tanstack.com/form/latest)
