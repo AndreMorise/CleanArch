@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2191419">
+  <PropertyGroup>
+    <!-- Project metadata -->
+    <RootNamespace>CleanArch.Client</RootNamespace>
+    <AssemblyName>CleanArch.Client</AssemblyName>
+
+    <!-- Launch & build commands (use pnpm instead of npm) -->
+    <StartupCommand>pnpm run dev</StartupCommand>
+    <BuildCommand>pnpm run build</BuildCommand>
+    <ProductionBuildCommand>pnpm run build</ProductionBuildCommand>
+
+    <!-- Disable built-in npm scripts -->
+    <ShouldRunNpmInstall>false</ShouldRunNpmInstall>
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+
+    <!-- Incremental stamp for pnpm install -->
+    <PnpmInstallStamp>$(BaseIntermediateOutputPath)pnpm-install.stamp</PnpmInstallStamp>
+    <PackageJsonDirectory>$(MSBuildProjectDirectory)</PackageJsonDirectory>
+
+    <!-- Test settings -->
+    <JavaScriptTestRoot>website\src\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>Vitest</JavaScriptTestFramework>
+
+    <!-- Output & restore -->
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
+    <RestoreEnableGlobalPackageReference>false</RestoreEnableGlobalPackageReference>
+
+    <!-- Node.js requirement -->
+    <RequiredNodeVersion>20.0.0</RequiredNodeVersion>
+  </PropertyGroup>
+
+  <!-- Verify Node.js is on PATH -->
+  <Target Name="VerifyNodeInstalled" BeforeTargets="RunPnpmInstall">
+    <Exec Command="node --version"
+          ContinueOnError="true"
+          ConsoleToMSBuild="true">
+      <Output TaskParameter="ExitCode"      PropertyName="NodeExitCode" />
+      <Output TaskParameter="ConsoleOutput" PropertyName="NodeRawVersion" />
+    </Exec>
+    <Error Condition="'$(NodeExitCode)' != '0'"
+           Text="Node.js ≥ $(RequiredNodeVersion) is required but wasn’t found on PATH." />
+  </Target>
+
+  <!-- Restore dependencies with pnpm, only when package.json or lockfile change -->
+  <Target Name="RunPnpmInstall"
+          BeforeTargets="BeforeRestore;BeforeBuild"
+          Inputs="$(PackageJsonDirectory)\package.json;$(PackageJsonDirectory)\pnpm-lock.yaml"
+          Outputs="$(PnpmInstallStamp)">
+    <Message Importance="high"
+             Text="Restoring dependencies with pnpm…" />
+    <Exec WorkingDirectory="$(PackageJsonDirectory)"
+          Command="pnpm install">
+      <Output TaskParameter="ExitCode" PropertyName="PnpmExitCode" />
+    </Exec>
+    <Error Condition="'$(PnpmExitCode)' != '0'"
+           Text="pnpm install failed—ensure pnpm is installed and try again." />
+    <Touch Files="$(PnpmInstallStamp)"
+           Condition="'$(PnpmExitCode)' == '0'"
+           AlwaysCreate="true" />
+  </Target>
+</Project>

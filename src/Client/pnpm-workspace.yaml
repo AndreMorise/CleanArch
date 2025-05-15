@@ -1,0 +1,10 @@
+packages:
+  - 'packages/*'
+  - 'website'
+catalogs:
+  dev:
+    '@biomejs/biome': 1.9.4
+    '@types/node': ^22.15.15
+    typescript: ^5.8.3
+    globals: ^16.0.0
+    vite: ^6.3.5

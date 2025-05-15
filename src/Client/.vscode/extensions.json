@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+		"biomejs.biome",
+		"bradlc.vscode-tailwindcss",
+		"ms-dotnettools.csharp",
+		"antfu.pnpm-catalog-lens"
+	]
+}
