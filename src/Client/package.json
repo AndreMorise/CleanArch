@@ -11,7 +11,10 @@
     "build:sample": "pnpm --filter=sample build",
     "typecheck": "tsc --noEmit",
     "format": "pnpm biome check --write",
-    "lint": "pnpm biome lint"
+    "lint": "pnpm biome lint",
+    "test": "pnpm -r test",
+    "test:website": "pnpm --filter=website test",
+    "test:sample": "pnpm --filter=sample test"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:dev",

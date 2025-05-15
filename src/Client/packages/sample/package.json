@@ -10,12 +10,16 @@
   "scripts": {
     "build": "tsc",
     "format": "pnpm biome check --write",
-    "lint": "pnpm biome lint"
+    "lint": "pnpm biome lint",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:dev",
+    "jsdom": "catalog:dev",
     "typescript": "catalog:dev",
-    "vite": "catalog:dev"
+    "vite": "catalog:dev",
+    "vitest": "catalog:dev"
   },
   "engines": {
     "node": ">=20.0.0"
