@@ -1,0 +1,27 @@
+{
+  "name": "poslinkweb",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "author": "Andre Morise <andre.morise@pax.us> (https://github.com/andremorise-pax)",
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "dev": "pnpm --filter=website dev",
+    "build": "pnpm --filter=website build",
+    "build:sample": "pnpm --filter=sample build",
+    "typecheck": "tsc --noEmit",
+    "format": "pnpm biome check --write",
+    "lint": "pnpm biome lint"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "globals": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vite": "catalog:dev",
+    "lefthook": "^1.11.12"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
