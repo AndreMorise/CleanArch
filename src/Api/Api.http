@@ -1,0 +1,6 @@
+@CleanArch.Api_HostAddress = http://localhost:5225
+
+GET {{CleanArch.Api_HostAddress}}/api/hello/
+Accept: application/json
+
+###
