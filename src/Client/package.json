@@ -1,9 +1,9 @@
 {
-  "name": "poslinkweb",
+  "name": "website",
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "author": "Andre Morise <andre.morise@pax.us> (https://github.com/andremorise-pax)",
+  "author": "Andre Morise",
   "packageManager": "pnpm@10.10.0",
   "scripts": {
     "dev": "pnpm --filter=website dev",

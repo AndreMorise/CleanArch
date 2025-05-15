@@ -2,7 +2,7 @@
   "name": "sample",
   "description": "Sample package",
   "version": "0.0.1",
-  "author": "",
+  "author": "Andre Morise",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -16,5 +16,8 @@
     "@biomejs/biome": "catalog:dev",
     "typescript": "catalog:dev",
     "vite": "catalog:dev"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
