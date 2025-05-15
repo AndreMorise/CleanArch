@@ -1,0 +1,9 @@
+# Lefthook files
+lefthook-local.yml
+
+# keep project packages
+!packages/**
+
+# Node modules
+node_modules/
+**/node_modules/

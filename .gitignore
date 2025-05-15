@@ -485,6 +485,3 @@ $RECYCLE.BIN/
 
 # Cursor files
 .cursor
-
-# Lefthook files
-lefthook-local.yml
